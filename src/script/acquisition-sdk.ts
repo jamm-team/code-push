@@ -64,12 +64,12 @@ export class AcquisitionManager {
     private _httpRequester: Http.Requester;
     private _ignoreAppVersion: boolean;
     private _serverUrl: string;
-    private _publicPrefixUrl: string = "update/";
+    private _publicPrefixUrl: string = "v0.1/public/codepush/";
 
     constructor(httpRequester: Http.Requester, configuration: Configuration) {
         this._httpRequester = httpRequester;
 
-        this._serverUrl = "https://codeget-api.premiumbonus.su/";
+        this._serverUrl = configuration.serverUrl;
         if (this._serverUrl.slice(-1) !== "/") {
             this._serverUrl += "/";
         }
